@@ -38,7 +38,7 @@ const displayDetails =(issue) =>{
 
             <div class="w-full bg-[#64748b10] flex gap-10">
                 <div><p class=" text-[10px] font-semibold">Assignee: ${issue.assignee}: <br><span> </span></p></div>
-                <div><p class="text-[10px] font-semibold">Priority: <br> <button  class="text-[10px] px-4 py-[4px] rounded-xl  bg-red-700 px-4 text-white border">${issue.priority}</button></p></div>
+                <div><p class="text-[10px] font-semibold">Priority: <br> <button  class="text-[10px] px-4 py-[4px] rounded-xl  bg-red-700  text-white border">${issue.priority}</button></p></div>
             </div>
     `;
     document.getElementById('word_modal').showModal();
