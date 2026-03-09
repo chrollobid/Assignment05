@@ -22,7 +22,7 @@ const displayDetails =(issue) =>{
                 <h1 class="font-semibold">${issue.title}</h1>
             </div>
             <div class="flex gap-1">
-                 <button class="text-[10px] px-4 py-[2px] rounded-xl border">green</button> 
+                 <button class="text-[10px] px-4 py-[2px] rounded-xl border">${issue.status}</button> 
                 <p class="  text-[10px]">opened by ${issue.author}</p>
                 <p  class="  text-[10px]">${issue.updatedAt}</p>
             </div>
