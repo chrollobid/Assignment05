@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracker</title>
+        <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- font integration  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- tailwind+daisyui  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- stylesheet  -->
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+<body class="min-h-screen max-w-md mt-[200px] mx-auto ">
+    <fieldset class="fieldset border-base-300 rounded-box shadow-md bg-white w-md border mx-auto p-8">
+<div class="mx-auto text-center grid justify-items-center ">
+    <img src="assets/github-logo.png" alt="">
+    <h2 class="font-bold text-2xl mt-4">GitHub Issues Tracker</h2>
+    <p class="text-base text-gray-400 mb-4">Sign in to manage your issues</p>
+</div>
+
+  <label  class="label font-bold text-base">Username</label>
+  <input id="input-username" type="email" class="input w-full" placeholder="Enter Username" />
+
+  <label class="label font-bold text-base">Password</label>
+  <input id="input-password" type="password" class="input w-full rounded-md" placeholder="Enter Password" />
+
+  <button id="login-btn" class="btn btn-primary mt-4">Sign In</button>
+
+<div class="flex items-center w-full my-4">
+  <div class="flex-grow border-t border-gray-300"></div>
+  
+  <span class="flex-shrink mx-4 text-gray-700 font-medium text-sm">OR</span>
+  
+  <div class="flex-grow border-t border-gray-300"></div>
+</div>
+<p class="text-xs mx-auto text-gray-400 mb-4">Demo Credentials:</p>
+<div class="mx-auto bg-sky-200 px-40 py-4 space-y-2">
+    <h3 class="text-sm"><span class=" font-bold">Username:</span>admin</h3>
+    <h3 class="text-sm"><span class=" font-bold">Password:</span>admin123</h3>
+</div>
+
+</fieldset>
+    <script src="script/login.js"></script>
+</body>
+</html>
