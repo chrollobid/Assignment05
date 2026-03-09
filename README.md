@@ -26,3 +26,4 @@ answer: it is a shorter way to write function in javascript and it is introduced
 
 
 5️⃣ What are template literals?
+answer: template literals are a modern way to create strings in JS using backticks(`) instead of quotes.
