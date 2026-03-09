@@ -10,14 +10,10 @@ const loadIssues = () => {
 
 const manageSpinner = (status) => {
     const spinner = document.getElementById('spinner');
-    const container = document.getElementById('issue-container'); 
-
-    if (status === true) {
+    if (status) {
         spinner.classList.remove('hidden');
-        container.classList.add('hidden');
     } else {
         spinner.classList.add('hidden');
-        container.classList.remove('hidden');
     }
 };
 const loadDetails =async (id)=>{
@@ -28,6 +24,7 @@ const loadDetails =async (id)=>{
     displayDetails(details.data)
 };
 const displayDetails =(issue) =>{
+    manageSpinner(false);
     console.log(issue)
     const detailsBox = document.getElementById('details-container');
     detailsBox.innerHTML=`
@@ -120,7 +117,7 @@ const displayIssues = (issues)=>{
         `
         issueContainer.appendChild(cardDiv)
     }
-manageSpinner(false)
+
 }
 
 loadIssues()
@@ -166,7 +163,9 @@ function activeBtn(id){
 }
 
 document.getElementById('btn-search').addEventListener('click', () => {
-    manageSpinner(true); // Turn on before fetch
+
+   
+    
     const input = document.getElementById('input-search');
     const searchValue = input.value.trim().toLowerCase();
     
@@ -177,7 +176,8 @@ document.getElementById('btn-search').addEventListener('click', () => {
         const filterIssues = allIssue.filter((issues) => 
             issues.title.toLowerCase().includes(searchValue)
         );
-        displayIssues(filterIssues);
         
+       
+        displayIssues(filterIssues); 
     });
 });
