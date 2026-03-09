@@ -33,12 +33,12 @@ const displayDetails =(issue) =>{
             </div>
 
             <div>
-                <p  class="text-[10px] ct">${issue.description}</p>
+                <p  class="text-[10px] ">${issue.description}</p>
             </div>
 
             <div class="w-full bg-[#64748b10] flex gap-10">
-                <div><p class="ct text-[10px] font-semibold">Assignee: ${issue.assignee}: <br><span> </span></p></div>
-                <div><p class="ct text-[10px] font-semibold">Priority: <br> <button  class="text-[10px] px-4 py-[4px] rounded-xl  bg-red-700 px-4 text-white border">${issue.priority}</button></p></div>
+                <div><p class=" text-[10px] font-semibold">Assignee: ${issue.assignee}: <br><span> </span></p></div>
+                <div><p class="text-[10px] font-semibold">Priority: <br> <button  class="text-[10px] px-4 py-[4px] rounded-xl  bg-red-700 px-4 text-white border">${issue.priority}</button></p></div>
             </div>
     `;
     document.getElementById('word_modal').showModal();
@@ -89,11 +89,11 @@ const displayIssues = (issues)=>{
         cardDiv.innerHTML=`
         <div onclick="loadDetails(${issue.id})" class=" h-full bg-white shadow rounded p-2 border-t-2 ${borderColor} space-y-2">
             <div class="flex justify-between items-center"><img class="w-3 h-3" ${iconColor} alt="">
-            <button class="  rounded-lg bg-red-200 px-4 text-red-700 text-[10px] ">${issue.priority}</button>
+            <button class="  rounded-lg bg-red-200 px-4 text-red-500 font-bold text-[10px] ">${issue.priority.toUpperCase()}</button>
             </div>
 
             <h2>${issue.title}</h2>
-            <p class="ct text-[10px]">${issue.description}</p>
+            <p class=" text-[10px]">${issue.description}</p>
 
             <div class="py-2">
                 <button class=" ${bugColor} uppercase rounded-lg  text-[10px] ">${issue.labels[0]}</button>
@@ -101,8 +101,8 @@ const displayIssues = (issues)=>{
             </div>
             <hr>
 
-            <p class="ct text-[10px] py-1">${issue.id}.Author: ${issue.author} </p>
-            <p class="ct text-[10px]">${issue.createdAt}</p>
+            <p class=" text-[10px] py-1">${issue.id}.Author: ${issue.author} </p>
+            <p class=" text-[10px]">${issue.createdAt}</p>
          </div>
         `
         issueContainer.appendChild(cardDiv)
