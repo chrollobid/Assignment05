@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issue Tracker | Home Page </title>
+
+     <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- daisyui and tailwind cdn -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- stylesheet -->
+     <link rel="stylesheet" href="./style/style.css">
+</head>
+<body class="bg-[#f8fafc]">
+    
+
+    <header class=" bg-white flex justify-between items-center p-4 shadow sticky">
+        <div class="flex gap-2">
+            <img class="w-7 h-7" src="./assets/github-logo.png" alt="">
+            <h1 class="text-xl font-semibold">GitHub Issue Tracker</h1>
+        </div>
+
+        <div>
+            <section class="flex justify-center items-center ">
+      <div class="join ">
+        <div>
+          <label class="input validator join-item">
+            <input
+              id="input-search"
+              type="text"
+              placeholder="Search Issues..."
+              required
+            />
+          </label>
+        </div>
+        <button id="btn-search" class="btn btn-primary mx-2">
+                + New Issue
+            </button>
+      </div>
+    </section>
+            
+        </div>
+    </header>
+
+    <!-- 3 buttons -->
+     <section class="bg-white w-10/12 mx-auto mt-10 rounded shadow ">
+        <button id="all-btn" class="btn btn-soft btn-primary  px-6 py-0 my-3 mx-3 font-bold select-btn">All</button>
+        <button id="open-btn" class="btn btn-soft btn-primary font-bold  px-6 select-btn">Open</button>
+        <button id="close-btn" class="btn btn-soft btn-primary font-bold  px-6  mx-3 select-btn">Closed</button>
+     </section>
+
+     <!-- 50 issues -->
+      <section  class="bg-white w-10/12 mx-auto mt-10 rounded shadow px-4 py-2 flex justify-between">
+        <div class="flex gap-2">
+            <div class="flex items-center"><img class=" h-8 w-8 justify-center" src="./assets/Aperture.png" alt=""></div>
+            <div>
+                <h1  class="text-xl font-semibold"> <span id="total-issues" class="text-xl font-semibold">50</span> Issues</h1>
+                <p class="ct font-light text-[10px]">Traack and manage your project issues</p>
+            </div>
+        </div>
+
+        <div class="flex gap-3">
+            <div class="flex gap-1 items-center"><img class="h-3 w-3" src="./assets/Open-Status.png" alt=""> 
+            <p class="font-semibold text-[10px]">Open</p>
+            </div>
+
+            <div class="flex gap-1 items-center"><img class="h-3 w-3" src="./assets/Closed- Status .png" alt=""> 
+            <p class="font-semibold text-[10px]">Close</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="issue-container" class="bg-white w-10/12 mx-auto mt-10 rounded shadow px-4 py-2 grid grid-cols-3 gap-10">
+         
+      </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+  
+    <dialog id="word_modal" class="modal modal-bottom   sm:modal-middle">
+        <div class="modal-box">
+         <div id="details-container" class="space-y-4">
+                  
+
+         </div>
+         <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+         <button class="btn">Close</button>
+          </form>
+      </div>
+    </div>
+</dialog>
+
+   
+    <script src="./script/home.js"></script>  
+</body>
+</html>
