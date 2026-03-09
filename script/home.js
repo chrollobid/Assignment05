@@ -1,10 +1,10 @@
 
-const loadIsues = () => {
+const loadIssues = () => {
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res)=> res.json())
     .then((json) => {
-        sobIssues = json.data;
-        displayIssues(sobIssues);
+        allIssues = json.data;
+        displayIssues(allIssues);
     })
 };
 
@@ -110,20 +110,20 @@ const displayIssues = (issues)=>{
 
 }
 
-loadIsues()
+loadIssues()
 
 // Btn task
 
 document.getElementById("all-btn").addEventListener("click", () => {
 
-    displayIssues(sobIssues);
+    displayIssues(allIssues);
     activeBtn("all-btn");
 
 });
 
 document.getElementById("open-btn").addEventListener("click", () => {
 
-    const openIssues = sobIssues.filter(issue => issue.priority !== "low");
+    const openIssues = allIssues.filter(issue => issue.priority !== "low");
 
     displayIssues(openIssues);
     activeBtn("open-btn");
@@ -132,7 +132,7 @@ document.getElementById("open-btn").addEventListener("click", () => {
 
 document.getElementById("close-btn").addEventListener("click", () => {
 
-    const closedIssues = sobIssues.filter(issue => issue.priority === "low");
+    const closedIssues = allIssues.filter(issue => issue.priority === "low");
 
     displayIssues(closedIssues);
     activeBtn("close-btn");
