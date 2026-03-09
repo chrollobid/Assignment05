@@ -8,7 +8,20 @@ const loadIssues = () => {
     })
 };
 
+const manageSpinner = (status) => {
+    const spinner = document.getElementById('spinner');
+    const container = document.getElementById('issue-container'); 
+
+    if (status === true) {
+        spinner.classList.remove('hidden');
+        container.classList.add('hidden');
+    } else {
+        spinner.classList.add('hidden');
+        container.classList.remove('hidden');
+    }
+};
 const loadDetails =async (id)=>{
+     manageSpinner(true);
     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
     const res = await fetch(url);
     const details = await res.json();
@@ -107,7 +120,7 @@ const displayIssues = (issues)=>{
         `
         issueContainer.appendChild(cardDiv)
     }
-
+manageSpinner(false)
 }
 
 loadIssues()
@@ -153,15 +166,18 @@ function activeBtn(id){
 }
 
 document.getElementById('btn-search').addEventListener('click', () => {
-    const input = document.getElementById('input-search')
-    const searchValue = input.value.trim().toLowerCase()
-    console.log(searchValue);
+    manageSpinner(true); // Turn on before fetch
+    const input = document.getElementById('input-search');
+    const searchValue = input.value.trim().toLowerCase();
+    
     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
     .then((res) => res.json())
-    .then((data)=>{
+    .then((data) => {
         const allIssue = data.data;
-        console.log(allIssue)
-        const filterIssues = allIssue.filter((issues) => issues.title.toLowerCase().includes(searchValue));
-        displayIssues(filterIssues)
-    })
-})
+        const filterIssues = allIssue.filter((issues) => 
+            issues.title.toLowerCase().includes(searchValue)
+        );
+        displayIssues(filterIssues);
+        
+    });
+});
